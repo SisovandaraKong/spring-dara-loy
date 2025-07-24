@@ -12,6 +12,9 @@ COPY settings.gradle .
 # Copy source code
 COPY src src
 
+# Make gradlew executable
+RUN chmod +x ./gradlew
+
 # Build the jar (skip tests for speed)
 RUN ./gradlew clean build -x test
 
