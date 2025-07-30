@@ -27,7 +27,7 @@ public class ChatMessage {
     @Builder.Default
     private MessageType type = MessageType.TEXT;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "sender_id", nullable = false)
     private User sender;
 
